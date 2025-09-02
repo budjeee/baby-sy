@@ -1,0 +1,19 @@
+name: baby-sy pipeline
+
+
+on:
+  push:
+    branches:
+      - dev
+      - qa
+      - prod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show branch that triggered the run
+        run: echo "Wazzap from ${{ github.ref_name}} branch!"
